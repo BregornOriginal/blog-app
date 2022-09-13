@@ -1,24 +1,46 @@
-# README
+# Blog app
+This is an app where the user can create a post and on it, exist the posibility to do comments about it.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Built With:
 
-* Ruby version
+- Ruby on Rails
+- SQL
 
-* System dependencies
+## Getting Started
+- To get a local copy of this project clone this repository or download the Zip folder:
+git clone https://github.com/BregornOriginal/blog-app.git
 
-* Configuration
+- To get started, In the root directory run:
+gem install bundler
 
-* Database creation
+- Then run:
+bundle install
 
-* Database initialization
+- Run ruby on rails app in the Command Line:
+rails s
+### Usage
 
-* How to run the test suite
+To edit this project:
 
-* Services (job queues, cache servers, search engines, etc.)
+- Open the repository you cloned with a code editor that you like.
 
-* Deployment instructions
+- Edit the code as you want.
 
-* ...
+## Author:
+
+👤 **@BregornOriginal**
+
+- GitHub: [![GitHub Badge](https://img.shields.io/badge/-BregornOriginal-white?logo=GitHub&logoColor=181717&style=plastic)](https://github.com/BregornOriginal)
+
+- Twitter: [![Twitter Badge](https://img.shields.io/badge/-Bregorn-white?logo=Twitter&logoColor=1DA1F2&style=plastic)](https://twitter.com/Bregorn)
+
+- LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-JulioGagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/julio-gagliardi/)
+
+## :star2: Show your support
+
+Give a :star: if you like my project!
+
+## :pencil: License
+
+This project is [MIT](https://github.com/Gopxfs/catalog-of-my-things/blob/main/LICENSE) licensed.
