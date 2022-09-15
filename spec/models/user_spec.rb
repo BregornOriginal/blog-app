@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   subject do
-  user = User.new(
-    name: 'Julio',
-    photo: 'Url',
-    bio: "Developer",
-    posts_counter: 0
-  )
-end
+    user = User.new(
+      name: 'Julio',
+      photo: 'Url',
+      bio: 'Developer',
+      posts_counter: 0
+    )
+  end
 
   before { subject.save }
 
@@ -39,5 +39,4 @@ end
       expect(subject.three_recent_post.count).to eq(3)
     end
   end
-
 end

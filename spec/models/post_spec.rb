@@ -6,7 +6,7 @@ RSpec.describe Post, type: :model do
       author: User.new(
         name: 'Julio',
         photo: 'Url',
-        bio: "Developer",
+        bio: 'Developer',
         posts_counter: 0
       ),
       title: 'This is a title',
@@ -15,7 +15,7 @@ RSpec.describe Post, type: :model do
       likes_counter: 0
     )
   end
-  
+
   before { subject.save }
 
   describe 'title' do
@@ -25,8 +25,8 @@ RSpec.describe Post, type: :model do
     end
 
     it 'should have less than 251 chars' do
-       subject.title = 'a' * 251
-       expect(subject).to_not be_valid
+      subject.title = 'a' * 251
+      expect(subject).to_not be_valid
     end
   end
 
@@ -38,8 +38,6 @@ RSpec.describe Post, type: :model do
     it 'should be greater than or equal to 0' do
       expect(subject.comments_counter).to be >= 0
     end
-
-
   end
 
   describe '#recent_comments' do

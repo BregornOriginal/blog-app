@@ -27,5 +27,4 @@ RSpec.describe Comment, type: :model do
       expect(subject.send(:update_comments_counter)).to be_valid
     end
   end
-  
 end

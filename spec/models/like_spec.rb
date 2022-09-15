@@ -4,7 +4,7 @@ RSpec.describe Like, type: :model do
   user = User.new(
     name: 'Julio',
     photo: 'Url',
-    bio: "Developer",
+    bio: 'Developer',
     posts_counter: 0
   )
 

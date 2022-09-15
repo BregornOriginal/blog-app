@@ -13,11 +13,10 @@ class Post < ApplicationRecord
   def recent_comments
     Comment.last(5)
   end
-  
+
   private
 
   def update_post_counter
     author.increment!(:posts_counter)
   end
-
 end
