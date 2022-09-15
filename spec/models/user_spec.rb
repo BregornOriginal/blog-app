@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   subject do
-    user = User.new(
+    User.new(
       name: 'Julio',
       photo: 'Url',
       bio: 'Developer',
