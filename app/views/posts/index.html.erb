@@ -10,14 +10,15 @@
   </tbody>
 </table>
 
-<table>
-  <tbody>
     <% @posts.each do |post| %>
-      <tr>
-         <td><%= post.title %></td>
-        <td><%= post.text %></td>
-         <td>Comments: <%= post.comments_counter %></td>
-         <td>Likes: <%= post.likes_counter %></td>
+         <a href='posts/<%=post.id%>'><p><%= post.title %></a></p>
+         <p maxlength= 150><%= post.text %></textarea>
+         <p>Comments: <%= post.comments_counter %></p>
+         <p>Likes: <%= post.likes_counter %></p>
+    <% post.recent_comments.each do |comment| %>
+        <div>
+          <p><%=comment.text %></p>
+        </div>
     <% end %>
-  </tbody>
-</table>
+    <% end %>
+<button>Pagination</button>
