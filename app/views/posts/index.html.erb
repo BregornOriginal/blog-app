@@ -1,1 +1,23 @@
 <h1>User post</h1>
+
+<table>
+  <tbody>
+      <tr>
+        <td><img alt='This is an image'/></td>
+        <td><%= link_to @user.name, @user, class: 'user-name' %></td>
+        <td>Number of posts: <%= @user.posts_counter%>
+      </tr>
+  </tbody>
+</table>
+
+<table>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+         <td><%= post.title %></td>
+        <td><%= post.text %></td>
+         <td>Comments: <%= post.comments_counter %></td>
+         <td>Likes: <%= post.likes_counter %></td>
+    <% end %>
+  </tbody>
+</table>
