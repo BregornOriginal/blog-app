@@ -1,0 +1,16 @@
+$color-blue: red;
+$padding : 5px;
+
+.user-name {
+  color: $color-blue;
+  padding: $padding;
+  border-radius: $padding/2;
+
+  &:hover {
+    color: darken($color: $color-blue, $amount: 20);
+  }
+}
+
+.all-posts-of-user {
+  padding: 10px 20px;
+}

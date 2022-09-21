@@ -1,1 +1,11 @@
 <h1>This is the user ID</h1>
+  Name: <%=@user.name%><br>
+  Number of posts: <%= @user.posts_counter%><br>
+  Bio: <%=@user.bio%><br>
+  <% @posts.each do |post| %>
+  <%= post.title%><br>
+  Likes: <%=post.likes_counter%><br>
+  Comments: <%=post.comments_counter%><br>
+  <% end %>
+  
+<a href='<%=@user.id %>/posts'class='all-posts-of-user'>See all posts </a>
