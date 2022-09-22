@@ -6,7 +6,7 @@ body {
 
 .user-name {
   color: rgb(161, 85, 177);
-  
+
   &:hover {
     color: darken($color: rgb(255, 251, 0), $amount: 20);
   }
@@ -52,9 +52,9 @@ a {
 .counters {
   display: flex;
   justify-content: flex-end;
-  
+
   p {
-    padding: 7px
+    padding: 7px;
   }
 }
 
