@@ -5,7 +5,18 @@ This is an app where the user can create a post and on it, exist the posibility 
 ## Built With:
 
 - Ruby on Rails
-- SQL
+- RSpec
+- SASS
+- PostgresSQL
+
+Prerequisites
+
+- Ruby 3.1.2 or newer
+- Rails 7.0.4 or newer
+- Git
+- NPM
+- PostgreSQL
+- Modern web browser
 
 ## Getting Started
 - To get a local copy of this project clone this repository or download the Zip folder:
@@ -19,6 +30,9 @@ bundle install
 
 - Run ruby on rails app in the Command Line:
 rails s
+
+- Then browse http://localhost:3000
+
 ### Usage
 
 To edit this project:
