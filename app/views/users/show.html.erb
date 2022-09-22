@@ -1,25 +1,29 @@
-<h1>This is the user ID</h1>
-
-<section class='card_container'>
-  <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
-  <p>Name: <%=@user.name%></p>
-  <p>Number of posts: <%= @user.posts_counter%></p>
+<section>
+  <div class='card_container'>
+      <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
+      <div class='user-info'>
+        <p><%= link_to @user.name, @user, class: 'user-name' %></p>
+        <p>Number of posts: <%= @user.posts_counter%></p>
+      </div>
+    </div>
 </section>
 <article class='bio'>
   <p>Bio:</p>
   <p><%=@user.bio%></p>
 </article>
 
-<section class='post-card'>
+<section>
 <% @posts.each do |post| %>
-  <div class='post-title'>
-    <p><%= post.title%></p>
-    <p><%= post.text%></p>
-  </div>
+  <article class='post-card'>
+    <div class='post-title'>
+      <p><%= post.title%></p>
+      <p><%= post.text%></p>
+    </div>
   <div class='counters'>
     <p>Likes: <%=post.likes_counter%><br></p>
     <p>Comments: <%=post.comments_counter%><br></p>
   </div>
+  </article>
 <% end %>
 </section>
 <button><a href='<%=@user.id %>/posts'class='all-posts-of-user'>See all posts</a></button>
