@@ -64,3 +64,23 @@ a {
   padding: 15px;
   margin: 0 20px 10px 20px;
 }
+
+.post-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-counters {
+  display: flex;
+
+  p {
+    padding: 7px;
+  }
+}
+
+.post-container {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 20px 10px 20px;
+}

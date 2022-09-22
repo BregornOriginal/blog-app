@@ -1,9 +1,17 @@
-<h3>Post # <%=@post.id%> by <%=@post.author.name%></h3>
-<p>Likes: <%=@post.likes_counter%></p>
-<p>Comments: <%=@post.comments_counter%></p>
-<p><%=@post.title%></p>
-<p><%=@post.text%></p>
+<section class='post-container'>
+  <div class='post-title'>
+    <h3>Post # <%=@post.id%> by <%=@post.author.name%></h3>
+    <div class='post-counters'>
+      <p>Likes: <%=@post.likes_counter%></p>
+      <p>Comments: <%=@post.comments_counter%></p>
+    </div>
+  </div>
+  <p><%=@post.title%></p>
+  <p><%=@post.text%></p>
+</section>
 
 <% @comments.each do |comment| %>
-<p><%= comment.author.name%>: <%= comment.text%></p>
+  <div class='user-comments'>
+    <p><%= comment.author.name%>: <%= comment.text%></p>
+  </div>
 <%end%>

@@ -11,7 +11,7 @@
 <section>
   <% @posts.each do |post| %>
     <article class='post-card'>
-      <div class='post-title'>
+      <div>
         <a href='posts/<%=post.id%>'><p><%= post.title %></a></p>
         <p maxlength= 150><%= post.text %></p>
       </div>
