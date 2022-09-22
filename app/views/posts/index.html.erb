@@ -1,22 +1,22 @@
-<table>
-  <tbody>
-      <tr>
-        <td><img alt='This is an image'/></td>
-        <td><%= link_to @user.name, @user, class: 'user-name' %></td>
-        <td>Number of posts: <%= @user.posts_counter%>
-      </tr>
-  </tbody>
-</table>
+<section class='card_container'>
+ <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
+ <p><%= link_to @user.name, @user, class: 'user-name' %></p>
+ <p>Number of posts: <%= @user.posts_counter%></p>
+</section>
 
-    <% @posts.each do |post| %>
-         <a href='posts/<%=post.id%>'><p><%= post.title %></a></p>
-         <p maxlength= 150><%= post.text %></textarea>
-         <p>Comments: <%= post.comments_counter %></p>
-         <p>Likes: <%= post.likes_counter %></p>
-    <% post.recent_comments.each do |comment| %>
-        <div>
-          <p><%=comment.text %></p>
-        </div>
+<section>
+  <% @posts.each do |post| %>
+    <a href='posts/<%=post.id%>'><p><%= post.title %></a></p>
+    <p maxlength= 150><%= post.text %></textarea>
+    <p>Comments: <%= post.comments_counter %></p>
+    <p>Likes: <%= post.likes_counter %></p>
+    <% post.recent_comments.each_with_index do |comment, idx| %>
+      <div class='user-comments'>
+        <p><%=comment.author.name%>:</p>
+        <p><%=comment.text %></p>
+      </div>
     <% end %>
-    <% end %>
-<button>Pagination</button>
+  <% end %>
+</section>
+
+<button type='button' class='pagination-button'>Pagination</button>
