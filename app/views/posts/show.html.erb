@@ -1,3 +1,5 @@
+<%=link_to '< Go back', :back, class: 'back-button' %>
+
 <section class='post-container'>
   <div class='post-title'>
     <h3>Post # <%=@post.id%> by <%=@post.author.name%></h3>
@@ -9,9 +11,12 @@
   <p><%=@post.title%></p>
   <p><%=@post.text%></p>
 </section>
-
-<div class='user-comments'>
-  <% @comments.each do |comment| %>
-    <p><%= comment.author.name%>: <%= comment.text%></p>
-  <%end%>
-</div>
+<% if @post.comments.empty? %>
+  <h5>No comments</h5>
+<%else %>
+  <div class='user-comments'>
+    <% @comments.each do |comment| %>
+      <p><%= comment.author.name%>: <%= comment.text%></p>
+    <%end%>
+<%end%>
+  </div>
