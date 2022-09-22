@@ -1,11 +1,25 @@
 <h1>This is the user ID</h1>
-  Name: <%=@user.name%><br>
-  Number of posts: <%= @user.posts_counter%><br>
-  Bio: <%=@user.bio%><br>
-  <% @posts.each do |post| %>
-  <%= post.title%><br>
-  Likes: <%=post.likes_counter%><br>
-  Comments: <%=post.comments_counter%><br>
-  <% end %>
-  
-<a href='<%=@user.id %>/posts'class='all-posts-of-user'>See all posts </a>
+
+<section class='card_container'>
+  <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
+  <p>Name: <%=@user.name%></p>
+  <p>Number of posts: <%= @user.posts_counter%></p>
+</section>
+<article class='bio'>
+  <p>Bio:</p>
+  <p><%=@user.bio%></p>
+</article>
+
+<section class='post-card'>
+<% @posts.each do |post| %>
+  <div class='post-title'>
+    <p><%= post.title%></p>
+    <p><%= post.text%></p>
+  </div>
+  <div class='counters'>
+    <p>Likes: <%=post.likes_counter%><br></p>
+    <p>Comments: <%=post.comments_counter%><br></p>
+  </div>
+<% end %>
+</section>
+<button><a href='<%=@user.id %>/posts'class='all-posts-of-user'>See all posts</a></button>
