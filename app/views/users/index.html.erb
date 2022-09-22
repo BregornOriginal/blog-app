@@ -1,13 +1,7 @@
-<h1>Users list</h1>
-
-<table>
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><img alt='This is an image'/></td>
-        <td><%= link_to user.name, user, class: 'user-name' %></td>
-        <td>Number of posts: <%= user.posts_counter%>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section class='card_container'>
+  <% @users.each do |user| %>
+    <img alt='This is an image' src='<%=user.photo%>' class='user_image'/>
+    <p><%= link_to user.name, user, class: 'user-name' %></p>
+    <p>Number of posts: <%= user.posts_counter%></p>
+  <% end %>
+</section>
