@@ -1,7 +1,11 @@
-<section class='card_container'>
+<section>
   <% @users.each do |user| %>
-    <img alt='This is an image' src='<%=user.photo%>' class='user_image'/>
-    <p><%= link_to user.name, user, class: 'user-name' %></p>
-    <p>Number of posts: <%= user.posts_counter%></p>
+    <div class='card_container'>
+      <img alt='This is an image' src='<%=user.photo%>' class='user_image'/>
+      <div class='user-info'>
+        <p><%= link_to user.name, user, class: 'user-name' %></p>
+        <p>Number of posts: <%= user.posts_counter%></p>
+      </div>
+    </div>
   <% end %>
 </section>

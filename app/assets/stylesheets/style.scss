@@ -1,16 +1,26 @@
-$color-blue: red;
-$padding : 5px;
-
 .user-name {
-  color: $color-blue;
-  padding: $padding;
-  border-radius: $padding/2;
-
+  color: red;
+  
   &:hover {
-    color: darken($color: $color-blue, $amount: 20);
+    color: darken($color: red, $amount: 20);
   }
 }
 
 .all-posts-of-user {
   padding: 10px 20px;
+}
+
+.card_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.user_image {
+  width: 100px;
+  border-radius: 15%;
 }
