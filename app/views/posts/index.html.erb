@@ -1,1 +1,36 @@
-<h1>User post</h1>
+<section>
+ <div class='card_container'>
+      <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
+      <div class='user-info'>
+        <p><%= link_to @user.name, @user, class: 'user-name' %></p>
+        <p>Number of posts: <%= @user.posts_counter%></p>
+      </div>
+    </div>
+</section>
+
+<section>
+  <% @posts.each do |post| %>
+    <article class='post-card'>
+      <div>
+        <a href='posts/<%=post.id%>'><p><%= post.title %></a></p>
+        <p maxlength= 150><%= post.text %></p>
+      </div>
+      <div class='counters'>
+        <p>Comments: <%=post.comments_counter%><br></p>
+        <p>Likes: <%=post.likes_counter%><br></p>
+      </div>
+    </article>
+    <div class='user-comments'>
+    <% if post.comments.empty? %>
+    <h5>No comments</h5>
+    <% else %>
+      <% post.recent_comments.each do |comment| %>
+        <p><%=comment.author.name%>:</p>
+        <p><%=comment.text %></p>
+      <% end %>
+    </div>
+    <% end %>
+  <% end %>
+</section>
+
+<button type='button' class='pagination-button'>Pagination</button>

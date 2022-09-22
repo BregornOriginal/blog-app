@@ -1,0 +1,86 @@
+body {
+  background-color: rgb(147, 184, 184);
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.user-name {
+  color: rgb(161, 85, 177);
+
+  &:hover {
+    color: darken($color: rgb(255, 251, 0), $amount: 20);
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.all-posts-of-user {
+  padding: 10px 20px;
+}
+
+.card_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px 20px;
+}
+
+.user_image {
+  width: 100px;
+  border-radius: 15%;
+}
+
+.bio {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 20px 10px 20px;
+}
+
+.post-card {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 20px 10px 20px;
+}
+
+.counters {
+  display: flex;
+  justify-content: flex-end;
+
+  p {
+    padding: 7px;
+  }
+}
+
+.user-comments {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 0 20px 10px 20px;
+}
+
+.post-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post-counters {
+  display: flex;
+
+  p {
+    padding: 7px;
+  }
+}
+
+.post-container {
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 15px;
+  margin: 20px 20px 10px 20px;
+}
