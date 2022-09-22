@@ -21,11 +21,15 @@
       </div>
     </article>
     <div class='user-comments'>
-      <% post.recent_comments.each_with_index do |comment, idx| %>
-      <p><%=comment.author.name%>:</p>
-      <p><%=comment.text %></p>
+    <% if post.comments.empty? %>
+    <h5>No comments</h5>
+    <% else %>
+      <% post.recent_comments.each do |comment| %>
+        <p><%=comment.author.name%>:</p>
+        <p><%=comment.text %></p>
       <% end %>
     </div>
+    <% end %>
   <% end %>
 </section>
 
