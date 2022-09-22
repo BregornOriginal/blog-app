@@ -10,8 +10,8 @@
   <p><%=@post.text%></p>
 </section>
 
-<% @comments.each do |comment| %>
-  <div class='user-comments'>
+<div class='user-comments'>
+  <% @comments.each do |comment| %>
     <p><%= comment.author.name%>: <%= comment.text%></p>
-  </div>
-<%end%>
+  <%end%>
+</div>
