@@ -1,4 +1,6 @@
-  <%=link_to '< Go back', users_url, class: 'back-button' %>
+<div class='back_button_container'>
+  <%=link_to 'Go back', users_url, class: 'create_button back_button' %>
+</div>
 
 <section>
   <div class='card_container'>
@@ -32,4 +34,7 @@
   <% end %>
 <% end %>
 </section>
-<button><a href='<%=@user.id %>/posts'class='all-posts-of-user'>See all posts</a></button>
+
+<div class='create_button_container'>
+  <%= link_to 'See all posts', user_posts_url(@user.id), class: 'create_button'%>
+</div>

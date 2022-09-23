@@ -1,5 +1,8 @@
+<div class='back_button_container'>
+  <%=link_to 'Home', users_url, class: 'create_button back_button' %>
+</div>
+
 <h1>New Post</h1>
-  <button><%=link_to 'Home', users_url, class: 'back-button' %></button>
 
 <%= form_with model: post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
 

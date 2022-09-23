@@ -1,4 +1,6 @@
-<%=link_to '< Go back', user_posts_url(@user.id), class: 'back-button' %>
+<div class='back_button_container'>
+  <%=link_to 'Go back', user_posts_url(@user.id), class: 'create_button back_button' %>
+</div>
 
 <section class='post-container'>
   <div class='post-title'>

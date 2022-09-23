@@ -20,6 +20,39 @@ a {
   padding: 10px 20px;
 }
 
+.create_button_container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.back_button_container {
+  margin: 40px 0 40px 20px;
+}
+
+.create_button {
+  width: 100px;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(134, 93, 83);
+  color: rgb(59, 56, 23);
+  letter-spacing: 0.5px;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+
+  &:hover {
+   filter: brightness(0.8);
+  }
+}
+
+.back_button {
+  width: 55px;
+}
+
+
 .grid_container {
   display: grid;
   gap: 30px 10px;
