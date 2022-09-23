@@ -1,3 +1,5 @@
+<%=link_to '< Go back', user_posts_url(@user.id), class: 'back-button' %>
+
 <section class='post-container'>
   <div class='post-title'>
     <h3>Post # <%=@post.id%> by <%=@post.author.name%></h3>
@@ -9,9 +11,28 @@
   <p><%=@post.title%></p>
   <p><%=@post.text%></p>
 </section>
+<% if @post.comments.empty? %>
+  <h5>No comments</h5>
+<%else %>
+  <div class='user-comments'>
+    <% @comments.each do |comment| %>
+      <p><%= comment.author.name%>: <%= comment.text%></p>
+    <%end%>
+<%end%>
+  </div>
 
-<div class='user-comments'>
-  <% @comments.each do |comment| %>
-    <p><%= comment.author.name%>: <%= comment.text%></p>
-  <%end%>
-</div>
+<h1>New Comment</h1>
+<%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |f| %>
+
+  <div>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+
+  <%= f.submit "Create Comment" %>
+
+<% end %>
+
+<%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <% form.submit 'Like' %>
+<% end %>

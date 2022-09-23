@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: 'author_id'
 
   def three_recent_post
-    Post.last(3)
+    posts.last(3)
   end
 end

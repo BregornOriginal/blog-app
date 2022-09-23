@@ -1,3 +1,5 @@
+<%=link_to '< Go back', user_url(@user.id), class: 'back-button' %>
+
 <section>
  <div class='card_container'>
       <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
@@ -19,8 +21,6 @@
         <p>Comments: <%=post.comments_counter%><br></p>
         <p>Likes: <%=post.likes_counter%><br></p>
       </div>
-    </article>
-    <div class='user-comments'>
     <% if post.comments.empty? %>
     <h5>No comments</h5>
     <% else %>
@@ -28,9 +28,10 @@
         <p><%=comment.author.name%>:</p>
         <p><%=comment.text %></p>
       <% end %>
-    </div>
     <% end %>
+    </article>
   <% end %>
 </section>
 
-<button type='button' class='pagination-button'>Pagination</button>
+<button type='button' class='pagination_button'>Pagination</button>
+<button type='button' class='new_post_button'><%=link_to 'Create a Post', new_user_post_url(@user.id), class: 'new-post-button' %>
