@@ -32,3 +32,7 @@
   <%= f.submit "Create Comment" %>
 
 <% end %>
+
+<%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <% form.submit 'Like' %>
+<% end %>
