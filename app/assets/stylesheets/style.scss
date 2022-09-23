@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(147, 184, 184);
+  background-color: rgb(90, 121, 95);
   margin: 0;
   box-sizing: border-box;
 }
 
 .user-name {
-  color: rgb(161, 85, 177);
+  color: rgb(59, 56, 23);
 
   &:hover {
     color: darken($color: rgb(255, 251, 0), $amount: 20);
@@ -18,6 +18,13 @@ a {
 
 .all-posts-of-user {
   padding: 10px 20px;
+}
+
+.grid_container {
+  display: grid;
+  gap: 30px 10px;
+  grid-template-rows: 2.5fr 2.5fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .card_container {
