@@ -1,4 +1,4 @@
-<%=link_to '< Go back', :back, class: 'back-button' %>
+<%=link_to '< Go back', user_posts_url(@user.id), class: 'back-button' %>
 
 <section class='post-container'>
   <div class='post-title'>
@@ -20,3 +20,15 @@
     <%end%>
 <%end%>
   </div>
+
+<h1>New Comment</h1>
+<%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |f| %>
+
+  <div>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+
+  <%= f.submit "Create Comment" %>
+
+<% end %>
