@@ -17,6 +17,9 @@
 </div>
 
 <section>
+  <% if @posts.empty? %>
+    <h4>This user hasn't create any post yet</h4>
+  <% else %>
   <% @posts.each do |post| %>
   <section class='posts_container'>
     <article class='post_card'>
@@ -38,6 +41,7 @@
     <% end %>
     </article>
   </section>
+  <% end %>
   <% end %>
 </section>
 
