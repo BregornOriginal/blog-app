@@ -4,7 +4,7 @@ body {
   box-sizing: border-box;
 }
 
-.user-name {
+.user_name {
   color: rgb(59, 56, 23);
 
   &:hover {
@@ -60,7 +60,13 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
+.card_layout {
+  display: flex;
+}
+
 .card_container {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -68,6 +74,12 @@ a {
   border-radius: 5px;
   padding: 20px;
   margin: 10px 20px;
+  width: 65%;
+
+  &:hover {
+    box-shadow: 8px 5px 5px rgb(221, 163, 38), 10px 5px 5px white;
+    cursor: pointer;
+  }
 }
 
 .user_image {
@@ -75,14 +87,19 @@ a {
   border-radius: 15%;
 }
 
+.bio_container {
+  display: flex;
+}
+
 .bio {
   border: 2px solid black;
   border-radius: 5px;
   padding: 20px;
   margin: 0 20px 10px 20px;
+  width: 50%;
 }
 
-.post-card {
+.post_card {
   border: 2px solid black;
   border-radius: 5px;
   padding: 15px;
