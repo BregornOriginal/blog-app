@@ -26,7 +26,7 @@
 <% @user.three_recent_post.each do |post| %>
   <article class='post_card'>
     <div>
-      <p><%= post.title%></p>
+      <%= link_to post.title, user_post_url(@user.id, post.id)%>
       <p><%= post.text%></p>
     </div>
   <div class='counters'>
