@@ -56,6 +56,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'rspec-rails'
   gem "database_cleaner"
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 group :development do
