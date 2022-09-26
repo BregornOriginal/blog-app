@@ -18,7 +18,8 @@
 
 <section>
   <% @posts.each do |post| %>
-    <article class='post-card'>
+  <section class='posts_container'>
+    <article class='post_card'>
       <div>
         <%= link_to post.title, user_post_url(@user.id, post.id)%>
         <p maxlength= 150><%= post.text %></p>
@@ -36,6 +37,7 @@
       <% end %>
     <% end %>
     </article>
+  </section>
   <% end %>
 </section>
 
