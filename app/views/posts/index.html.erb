@@ -1,4 +1,6 @@
-<%=link_to '< Go back', user_url(@user.id), class: 'back-button' %>
+<div class='back_button_container'>
+  <%=link_to 'Go back', user_url(@user.id), class: 'create_button back_button' %>
+</div>
 
 <section>
  <div class='card_container'>
@@ -10,11 +12,16 @@
     </div>
 </section>
 
+<div class='create_button_container'>
+  <%=link_to 'Create a Post', new_user_post_url(@user.id), class: 'create_button' %>
+</div>
+
 <section>
   <% @posts.each do |post| %>
-    <article class='post-card'>
+  <section class='posts_container'>
+    <article class='post_card'>
       <div>
-        <a href='posts/<%=post.id%>'><p><%= post.title %></a></p>
+        <%= link_to post.title, user_post_url(@user.id, post.id)%>
         <p maxlength= 150><%= post.text %></p>
       </div>
       <div class='counters'>
@@ -30,8 +37,10 @@
       <% end %>
     <% end %>
     </article>
+  </section>
   <% end %>
 </section>
 
-<button type='button' class='pagination_button'>Pagination</button>
-<button type='button' class='new_post_button'><%=link_to 'Create a Post', new_user_post_url(@user.id), class: 'new-post-button' %>
+<div class='create_button_container'>
+  <%=link_to 'Pagination', new_user_post_url(@user.id), class: 'create_button' %>
+</div>

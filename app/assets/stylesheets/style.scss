@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(147, 184, 184);
+  background-color: rgb(90, 121, 95);
   margin: 0;
   box-sizing: border-box;
 }
 
-.user-name {
-  color: rgb(161, 85, 177);
+.user_name {
+  color: rgb(59, 56, 23);
 
   &:hover {
     color: darken($color: rgb(255, 251, 0), $amount: 20);
@@ -20,7 +20,54 @@ a {
   padding: 10px 20px;
 }
 
+.create_button_container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.back_button_container {
+  margin: 40px 0 40px 20px;
+}
+
+.create_button {
+  width: 100px;
+  padding: 0.801rem 1.188rem 0.886rem 1.375rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(134, 93, 83);
+  color: rgb(59, 56, 23);
+  letter-spacing: 0.5px;
+  font-family: 'RobotoSlab', sans-serif;
+  font-size: 0.813rem;
+  font-weight: bold;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    background-color: rgb(221, 163, 38);
+    filter: brightness(0.8);
+  }
+}
+
+.back_button {
+  width: 55px;
+}
+
+.grid_container {
+  display: grid;
+  gap: 30px 10px;
+  grid-template-rows: 2.5fr 2.5fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.card_layout {
+  display: flex;
+}
+
 .card_container {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -28,6 +75,12 @@ a {
   border-radius: 5px;
   padding: 20px;
   margin: 10px 20px;
+  width: 65%;
+
+  &:hover {
+    box-shadow: 8px 5px 5px rgb(221, 163, 38), 10px 5px 5px white;
+    // cursor: pointer;
+  }
 }
 
 .user_image {
@@ -35,18 +88,33 @@ a {
   border-radius: 15%;
 }
 
+.bio_container {
+  display: flex;
+}
+
 .bio {
   border: 2px solid black;
   border-radius: 5px;
   padding: 20px;
   margin: 0 20px 10px 20px;
+  width: 65%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.post-card {
+.posts_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post_card {
   border: 2px solid black;
   border-radius: 5px;
   padding: 15px;
   margin: 0 20px 10px 20px;
+  width: 40%;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
 .counters {
