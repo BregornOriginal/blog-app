@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.where(author: @user).order(id: :asc)
+    @posts = Post.where(author: @user).order(id: :asc).limit(2)
   end
 
   def show
