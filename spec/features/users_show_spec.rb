@@ -18,7 +18,7 @@ RSpec.describe 'show page', type: :feature do
       expect(page).to have_content(@user.posts_counter)
     end
 
-    it 'shows the posts counter' do
+    it 'shows the user bio' do
       visit "users/#{@id}" 
       expect(page).to have_content(@user.bio)
     end
@@ -28,8 +28,6 @@ RSpec.describe 'show page', type: :feature do
       expect(page).to have_css("img[src='#{@user.photo}']")
     end
 
-
-
   describe 'create a post' do
     before(:each) do
       @post = Post.create(title: 'My first post', author: @user, text: 'Text of my first post')
@@ -38,7 +36,10 @@ RSpec.describe 'show page', type: :feature do
 
     it 'shows last three post' do
       visit "users/#{@id}" 
-      expect(page).to have_content(@user.three_recent_post)
+      @user.three_recent_post.each do |post|
+        expect(page).to have_content(post.title)
+        expect(page).to have_content(post.text)
+      end
     end
 
     it 'redirect to the user post show page' do
