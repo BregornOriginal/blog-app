@@ -18,10 +18,12 @@
 
 <section>
   <% if @posts.empty? %>
+    <h1>Posts</h1>
     <h4>This user hasn't create any post yet</h4>
   <% else %>
   <% @posts.each do |post| %>
   <section class='posts_container'>
+    <h1>Posts</h1>
     <article class='post_card'>
       <div>
         <%= link_to post.title, user_post_url(@user.id, post.id)%>
