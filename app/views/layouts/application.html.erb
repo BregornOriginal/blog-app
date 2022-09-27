@@ -16,6 +16,7 @@
 
     <% if user_signed_in? %>
       <a href="/">Home</a>
+      <%= button_to "Sign out", destroy_user_session_path, { method: :delete, data: { turbo: false}} %>
     <% else %>
       <a href="/users/sign_in">Sign in</a>
     <% end %>

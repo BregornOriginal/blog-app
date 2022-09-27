@@ -14,14 +14,4 @@ class User < ApplicationRecord
   def three_recent_post
     posts.last(3)
   end
-
-  def user_signed_in?
-  end
-
-  def current_user
-  end
-
-  def user_session
-  end
-
 end
