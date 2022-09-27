@@ -1,10 +1,12 @@
 <!-- This next are examples of users, that were created to simulate a blog with some information. -->
 
-<!-- first_user = User.create(name: 'Druid', photo: 'https://i.im.ge/2022/09/22/1Ud6MY.druid.th.png', bio: 'I born in the forest')
+ <!-- first_user = User.create(name: 'Druid', photo: 'https://i.im.ge/2022/09/22/1Ud6MY.druid.th.png', bio: 'I born in the forest')
 
 first_user = User.create(name: 'Demon Hunter', photo: 'src=https://i.im.ge/2022/09/22/1Udsgy.demon-hunter.th.png', bio: 'I like to hunt')
 
-first_user = User.create(name: 'Death Knight', photo: 'https://i.im.ge/2022/09/22/1UOVlr.death-knight.th.png', bio: 'Training in the darkness') -->
+first_user = User.create(name: 'Death Knight', photo: 'https://i.im.ge/2022/09/22/1UOVlr.death-knight.th.png', bio: 'Training in the darkness') 
+
+first_user = User.create(name: 'Mage', photo: 'https://i.im.ge/2022/09/27/1tvHdq.mage.th.png', bio: 'I can be an excelent fire mage!') -->
 
 <!-- This next are examples of post, that were created to simulate a blog with some information. -->
 
