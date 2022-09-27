@@ -4,7 +4,7 @@ RSpec.describe 'index page', type: :feature do
   describe 'test' do
     before(:each) do
       @user = User.create(name: 'Julio', bio: 'This is the bio',
-      photo: "https://i.im.ge/2022/09/22/1Ud6MY.druid.th.png")
+                          photo: 'https://i.im.ge/2022/09/22/1Ud6MY.druid.th.png')
       @id = @user.id
     end
 
@@ -25,7 +25,7 @@ RSpec.describe 'index page', type: :feature do
 
     it 'redirect to show page' do
       visit users_path
-      click_link (@user.name)
+      click_link(@user.name)
       expect(page).to have_content('bio')
     end
   end
