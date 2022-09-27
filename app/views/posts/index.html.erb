@@ -18,10 +18,12 @@
 
 <section>
   <% if @posts.empty? %>
+    <h1>Posts</h1>
     <h4>This user hasn't create any post yet</h4>
   <% else %>
-  <% @posts.each do |post| %>
+  <% @posts.includes([:comments]).each do |post| %>
   <section class='posts_container'>
+    <h1>Posts</h1>
     <article class='post_card'>
       <div>
         <%= link_to post.title, user_post_url(@user.id, post.id)%>
@@ -34,7 +36,7 @@
     <% if post.comments.empty? %>
     <h5>No comments</h5>
     <% else %>
-      <% post.recent_comments.each do |comment| %>
+      <% @posts.includes([:author]).each do |comment| %>
         <p><%=comment.author.name%>:</p>
         <p><%=comment.text %></p>
       <% end %>
