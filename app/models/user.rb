@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
+         :confirmable
   validates :name, presence: true
   validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }
 
@@ -9,4 +14,14 @@ class User < ApplicationRecord
   def three_recent_post
     posts.last(3)
   end
+
+  def user_signed_in?
+  end
+
+  def current_user
+  end
+
+  def user_session
+  end
+
 end

@@ -25,7 +25,7 @@ development:
   <<: *default
   username: postgres
   password: testpostgre
-  database: blogapp_development
+  database: blog_app_development
   host: ''
   port: 5432
 
