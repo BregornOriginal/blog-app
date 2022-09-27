@@ -1,24 +1,38 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  describe 'GET /id' do
+  describe 'GET /' do
+    before(:example) { get '/' }
+
     it 'returns http success' do
-      get '/users/2'
       expect(response).to have_http_status(:success)
+    end
+
+    it 'renders the correct template' do
+      expect(response).to render_template(:index)
+    end
+
+    it 'includes the correct placeholder text in its body' do
+      expect(response.body).to include('<h1>Users</h1>')
     end
   end
 
-  describe 'GET /show' do
+  describe 'GET users/:id/' do
+    before(:example) do
+      user = User.create(name: 'Julio')
+      get "/users/#{user.id}/"
+    end
+
     it 'returns http success' do
-      get '/users'
       expect(response).to have_http_status(:success)
     end
-  end
-  describe 'GET users' do
-    it 'render a template' do
-      get '/users'
-      expect(response).to render_template(:index)
-      expect(response.body).to include('Users list')
+
+    it 'renders the correct template' do
+      expect(response).to render_template(:show)
+    end
+
+    it 'includes the correct placeholder text in its body' do
+      expect(response.body).to include("<div class='user-info'>")
     end
   end
 end
