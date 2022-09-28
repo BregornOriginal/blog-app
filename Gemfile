@@ -67,6 +67,7 @@ group :development do
   gem 'letter_opener'
   gem 'web-console'
   gem 'xmpp4r'
+  gem 'cancancan'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
