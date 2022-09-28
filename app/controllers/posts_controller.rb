@@ -4,12 +4,14 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = Post.where(author: @user).order(id: :asc).limit(2)
+    @current_user = current_user
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = Post.find(params[:id])
     @comments = @post.comments
+    @current_user = current_user
   end
 
   def new
