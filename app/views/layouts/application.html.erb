@@ -11,6 +11,13 @@
   </head>
 
   <body>
+   <p class="notice"><%= notice %></p>
+
+    <% if user_signed_in? %>
+      <a href="/">Home</a>
+      <%= button_to "Sign out", destroy_user_session_path, { method: :delete, data: { turbo: false}} %>
+    <% end %>
+
       <%= yield %>
   <% flash.each do |type, msg| %>
         <div class="alert <%= type %>">
