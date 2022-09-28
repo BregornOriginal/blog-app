@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'show page', type: :feature do
   before(:each) do
     @user = User.create(name: 'Julio', bio: 'This is the bio',
-    photo: "https://i.im.ge/2022/09/22/1Ud6MY.druid.th.png")
+                        photo: 'https://i.im.ge/2022/09/22/1Ud6MY.druid.th.png')
     @id = @user.id
   end
 
@@ -11,7 +11,8 @@ RSpec.describe 'show page', type: :feature do
     before(:each) do
       @post = Post.create(title: 'My first post', author: @user, text: 'Text of my first post')
       @post_id = @post.id
-      @comment = Comment.create(post: @post, author: @user, text: 'Restoration is an excelent option when you have to go to raids!')
+      @comment = Comment.create(post: @post, author: @user,
+                                text: 'Restoration is an excelent option when you have to go to raids!')
     end
 
     it 'show a post title' do
@@ -36,17 +37,17 @@ RSpec.describe 'show page', type: :feature do
 
     it 'shows post body' do
       visit "users/#{@id}/posts/#{@post_id}"
-      expect(page).to have_content("Post")
-    end 
+      expect(page).to have_content('Post')
+    end
 
     it 'shows the username of each commentor' do
       visit "users/#{@id}/posts/#{@post_id}"
-      expect(page).to have_content("#{@comment.author.name}")
+      expect(page).to have_content(@comment.author.name.to_s)
     end
 
     it 'shows the comment of each commentor' do
       visit "users/#{@id}/posts/#{@post_id}"
-      expect(page).to have_content("#{@user[@comment]}")
+      expect(page).to have_content((@user[@comment]).to_s)
     end
   end
 end
