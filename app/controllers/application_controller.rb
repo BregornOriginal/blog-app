@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
-  before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
 
-  protected
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
+    default_parameters = %i[name bio photo password]
+    devise_parameter_sanitizer.permit(:sign_up, keys: default_parameters)
+    devise_parameter_sanitizer.permit(:sign_in, keys: default_parameters)
+    devise_parameter_sanitizer.permit(:account_update, keys: default_parameters)
   end
 end
