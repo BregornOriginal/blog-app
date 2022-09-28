@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    @user = current_user
     post = Post.new
     respond_to do |format|
       format.html { render :new, locals: { post: } }
@@ -34,6 +35,16 @@ class PostsController < ApplicationController
           render :new, status: 422
         end
       end
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    respond_to do |format|
+      format.html { redirect_to user_posts_url }
+      format.json { head :no_content }
     end
   end
 end
