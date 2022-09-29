@@ -31,15 +31,13 @@
       <div class='counters'>
         <p>Comments: <%=post.comments_counter%><br></p>
         <p>Likes: <%=post.likes_counter%><br></p>
-      <% if can? :delete_post, @post %>
-        <%= button_to "Delete post", user_post_url(@user.id, post.id), method: :delete %>
-      <% end %>
       </div>
     <% if post.comments.empty? %>
       <h5>No comments</h5>
     <% else %>
       <% @posts.includes([:author]).each do |comment| %>
         <p><%=comment.author.name%>:</p>
+        <%= comment%>
         <p><%=comment.text %></p>
       <% end %>
     <% end %>

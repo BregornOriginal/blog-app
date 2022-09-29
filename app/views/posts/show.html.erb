@@ -12,6 +12,10 @@
   </div>
   <p><%=@post.title%></p>
   <p><%=@post.text%></p>
+        <% if can? :delete_post, @post %>
+        <%= button_to "Delete post", user_post_url(@user.id, @post.id), method: :delete %>
+      <% end %>
+          
 </section>
 <% if @post.comments.empty? %>
   <h5>No comments</h5>
@@ -19,6 +23,9 @@
   <div class='user-comments'>
     <% @comments.includes([:author]).each do |comment| %>
       <p><%= comment.author.name%>: <%= comment.text%></p>
+      <% if can? :delete_comment, comment %>
+          <%= button_to "Delete comment", user_post_comment_url(comment.author, @post, comment), method: :delete %>
+        <% end %>
     <%end%>
 <%end%>
   </div>
