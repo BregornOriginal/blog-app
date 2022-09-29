@@ -7,17 +7,20 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   belongs_to :author, class_name: 'User', foreign_key: :author_id
 
-  after_save :update_posts_counter
-  after_destroy :update_posts_counter
-  
+  after_save :increment_post_counter
+  after_destroy :decrement_post_counter
+
   def recent_comments
     comments.last(5)
   end
 
   private
 
-  def update_posts_counter
-    author.posts_counter = author.posts.length
-    author.save
+  def increment_post_counter
+    author.increment!(:posts_counter)
+  end
+
+  def decrement_post_counter
+    author.decrement!(:posts_counter)
   end
 end
