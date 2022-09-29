@@ -10,6 +10,7 @@ class Like < ApplicationRecord
   private
 
   def update_likes_counter
-    post.increment!(:likes_counter)
+    post.likes_counter = author.likes.length
+    post.save
   end
 end
