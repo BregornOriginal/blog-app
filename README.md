@@ -51,6 +51,15 @@ To edit this project:
 
 - LinkedIn: [![LinkedIn Badge](https://img.shields.io/badge/-JulioGagliardi-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)](https://www.linkedin.com/in/julio-gagliardi/)
 
+👤 **Menanya Morris**
+
+- GitHub: [@emmykage](https://github.com/Emmykage)
+
+- Twitter: [@mennydev](https://twitter.com/mennydev)
+
+- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya)
+
+
 ## :star2: Show your support
 
 Give a :star: if you like my project!
