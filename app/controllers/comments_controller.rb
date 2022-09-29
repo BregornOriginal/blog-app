@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])
-    comment = Comment.new(params.require(:comment).permit(:text))
+    comment = Comment.new(params.require(:comment).permit(:text, :author, :post))
     comment.author = current_user
     comment.post_id = @post.id
 
@@ -27,6 +27,16 @@ class CommentsController < ApplicationController
           render :new, locals: { comment: }
         end
       end
+    end
+  end
+
+  def destroy
+    comment = Comment.find(params[:id])
+    comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to user_post_url }
+      format.json { head :no_content }
     end
   end
 end
