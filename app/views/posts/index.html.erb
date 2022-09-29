@@ -18,7 +18,6 @@
 
 <section>
   <% if @posts.empty? %>
-    <h1>Posts</h1>
     <h4>This user hasn't create any post yet</h4>
   <% else %>
   <% @posts.includes([:comments]).each do |post| %>
@@ -32,9 +31,12 @@
       <div class='counters'>
         <p>Comments: <%=post.comments_counter%><br></p>
         <p>Likes: <%=post.likes_counter%><br></p>
+      <% if can? :delete_post, @post %>
+        <%= button_to "Delete post", user_post_url(@user.id, post.id), method: :delete %>
+      <% end %>
       </div>
     <% if post.comments.empty? %>
-    <h5>No comments</h5>
+      <h5>No comments</h5>
     <% else %>
       <% @posts.includes([:author]).each do |comment| %>
         <p><%=comment.author.name%>:</p>
@@ -44,7 +46,7 @@
     </article>
   </section>
   <% end %>
-  <% end %>
+<% end %>
 </section>
 
 <div class='create_button_container'>
