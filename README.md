@@ -1,6 +1,22 @@
 # Blog app
-This is an app where the user can create a post and on it, exist the posibility to do comments about it.
 
+In this blog app, an user can create an account, recover the password, this also have an email confirmation. 
+Once the user is in the app, he can create a post, on it he also can leave a comment or a like.
+If there is other post besides of the user logged, the user logged can have permisions to create a post begin him the author,
+he can leave comments in whole posts and also he can read all the post or comments in the Blog App.
+
+This app was created with Rails, including Devise for autenthication, CanCanCan for authorizations and JWT for the API authentication.
+
+There is a documentation with the differents Endpoints of the API, where the Developer can check the routes and parameters that's he need
+to:
+
+- GET a post
+- GET a comment
+- POST a comment
+
+## Live Version
+
+[Avaible Soon]()
 
 ## Built With:
 
@@ -8,6 +24,9 @@ This is an app where the user can create a post and on it, exist the posibility 
 - RSpec
 - SASS
 - PostgresSQL
+- Devise
+- CanCanCan
+- JWT
 
 Prerequisites
 
