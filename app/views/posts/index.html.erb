@@ -10,7 +10,9 @@
 
 <section>
   <% if @posts.empty? %>
+  <div class='notifications'>
     <h4>This user hasn't create any post yet</h4>
+  </div>
   <% else %>
   <% @posts.includes([:comments]).each do |post| %>
   <section class='posts_container'>

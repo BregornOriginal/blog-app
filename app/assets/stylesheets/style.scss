@@ -16,6 +16,14 @@ a {
   text-decoration: none;
 }
 
+h4 {
+  align-self: center;
+}
+.notifications {
+  display: flex;
+  justify-content: center;
+}
+
 .all-posts-of-user {
   padding: 10px 20px;
 }
@@ -28,7 +36,7 @@ a {
 }
 
 .back_button_container {
-  margin: 40px 0 40px 20px;
+  margin: 0 0 60px 40px;
 }
 
 .create_button {
@@ -55,15 +63,31 @@ a {
   width: 55px;
 }
 
+.nav_options {
+  display: flex;
+  align-items: center;
+  margin: 60px 60px 60px 60px;
+  justify-content: space-between;}
+
+.home_button {
+  margin: 20px 20px;
+}
+
 .grid_container {
   display: grid;
+  justify-items: center;
   gap: 30px 10px;
   grid-template-rows: 2.5fr 2.5fr;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
+.welcome_container {
+  margin-left: 60px;
+}
+
 .card_layout {
   display: flex;
+  justify-content: center;
 }
 
 .card_container {
@@ -76,7 +100,7 @@ a {
   border-radius: 5px;
   padding: 20px;
   margin: 10px 20px;
-  width: 65%;
+  width: 40%;
 
   &:hover {
     box-shadow: 8px 5px 5px rgb(221, 163, 38), 10px 5px 5px white;
@@ -91,6 +115,7 @@ a {
 
 .bio_container {
   display: flex;
+  justify-content: center;
 }
 
 .bio {
@@ -98,7 +123,7 @@ a {
   border-radius: 5px;
   padding: 20px;
   margin: 0 20px 10px 20px;
-  width: 65%;
+  width: 35%;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -167,11 +192,17 @@ a {
   input {
     border-radius: 8px;
     border: none;
-    width: 450px;
-    padding: 10px;
+    padding: 10px 120px;
+    text-align: center;
   }
 }
 
 .actions {
   margin: 80px 0 0 0;
+}
+
+.sign_up_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

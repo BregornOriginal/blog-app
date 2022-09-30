@@ -1,6 +1,6 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<section class= 'sign_up_form'>
+  <h2>Sign up</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
@@ -29,6 +29,8 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
 
 <%= render "devise/shared/links" %>
+  </section>

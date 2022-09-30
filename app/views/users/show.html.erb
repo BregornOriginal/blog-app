@@ -5,7 +5,9 @@
 <%= render 'users/user'%>
 
 <% if @user.posts.empty? %>
-<h4>No posts created</h4>
+<div class='notifications'>
+  <h4>No posts created</h4>
+</div>
 <% else %>
 <section class='posts_container'>
 <h4>Recents posts</h4>

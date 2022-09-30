@@ -11,18 +11,24 @@
   </head>
 
   <body>
-   <p class="notice"><%= notice %></p>
 
     <% if user_signed_in? %>
-      <a href="/">Home</a>
-      <%= button_to "Sign out", destroy_user_session_path, { method: :delete, data: { turbo: false}} %>
+      <nav class='nav_options'>
+        <div class='home_button'>
+          <a href="/" class='create_button'>Home</a>
+        </div>
+        <%= button_to "Log out", destroy_user_session_path, { method: :delete, data: { turbo: false}, class: 'create_button Log out'} %>
+      </nav>
     <% end %>
 
       <%= yield %>
-  <% flash.each do |type, msg| %>
+      <section class= 'notifications'>
+        <p class="notice"><%= notice %></p>
+        <% flash.each do |type, msg| %>
         <div class="alert <%= type %>">
           <%= msg %>
         </div>
       <% end %>
+      </section>
   </body>
 </html>
