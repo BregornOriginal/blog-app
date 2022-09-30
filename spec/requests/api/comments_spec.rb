@@ -22,7 +22,9 @@ RSpec.describe 'Blogs API' do
         run_test!
       end
     end
+  end
 
+  path '/api/v1/users/{id}/posts/{id}/comments' do
     post('create comment') do
       tags 'POST Comments'
       response(200, 'successful') do
