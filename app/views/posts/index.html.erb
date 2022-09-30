@@ -2,15 +2,7 @@
   <%=link_to 'Go back', user_url(@user.id), class: 'create_button back_button' %>
 </div>
 
-<section>
- <div class='card_container'>
-      <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
-      <div class='user-info'>
-        <p><%= link_to @user.name, @user, class: 'user-name' %></p>
-        <p>Number of posts: <%= @user.posts_counter%></p>
-      </div>
-    </div>
-</section>
+<%= render 'posts/posts'%>
 
 <div class='create_button_container'>
   <%=link_to 'Create a Post', new_user_post_url(@user.id), class: 'create_button' %>
