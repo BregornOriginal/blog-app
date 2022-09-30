@@ -7,10 +7,11 @@ class Like < ApplicationRecord
 
   validates :author, uniqueness: { scope: :post }
 
+  after_save :update_likes_counter
+
   private
 
   def update_likes_counter
-    post.likes_counter = author.likes.length
-    post.save
+    post.increment!(:likes_counter)
   end
 end

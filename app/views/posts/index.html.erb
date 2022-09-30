@@ -37,7 +37,6 @@
     <% else %>
       <% @posts.includes([:author]).each do |comment| %>
         <p><%=comment.author.name%>:</p>
-        <%= comment%>
         <p><%=comment.text %></p>
       <% end %>
     <% end %>
