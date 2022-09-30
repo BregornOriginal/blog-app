@@ -9,8 +9,9 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
     @comment = Comment.create(text: 'New Comment',
-      author: User.find(1), post: Post.find(1))
+      author: User.find(1), post: @post)
 
     render json: @comment
 
