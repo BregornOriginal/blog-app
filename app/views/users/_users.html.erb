@@ -1,0 +1,11 @@
+<section class='grid_container'>
+  <% @users.each do |user| %>
+    <div class='card_container'>
+      <img alt='This is an image' src='<%=user.photo%>' class='user_image'/>
+      <div class='user-info'>
+        <p><%= link_to user.name, user, class: 'user-name' %></p>
+        <p>Number of posts: <%= user.posts_counter%></p>
+      </div>
+    </div>
+  <% end %>
+</section>

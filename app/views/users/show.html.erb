@@ -2,21 +2,7 @@
   <%=link_to 'Go back', users_url, class: 'create_button back_button' %>
 </div>
 
-<section class='card_layout'>
-  <div class='card_container'>
-      <img alt='This is an image' src='<%=@user.photo%>' class='user_image'/>
-      <div class='user-info'>
-        <p><%= link_to @user.name, @user, class: 'user_name' %></p>
-        <p>Number of posts: <%= @user.posts_counter%></p>
-      </div>
-    </div>
-</section>
-<section class='bio_container'>
-  <article class='bio'>
-    <p>Bio:</p>
-    <p><%=@user.bio%></p>
-  </article>
-</section>
+<%= render 'users/user'%>
 
 <% if @user.posts.empty? %>
 <h4>No posts created</h4>
