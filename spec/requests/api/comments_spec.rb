@@ -1,11 +1,9 @@
 require 'swagger_helper'
 
 RSpec.describe 'Blogs API' do
-
   path '/api/v1/users/{id}/posts/{id}/comments' do
-
     get 'Retrieves comments of a post of the user' do
-      tags 'Comments'
+      tags 'GET Comments'
       produces 'application/json'
       parameter name: 'user_id', in: :path, type: :integer, description: 'user_id'
       parameter name: 'post_id', in: :path, type: :integer, description: 'post_id'
@@ -26,6 +24,7 @@ RSpec.describe 'Blogs API' do
     end
 
     post('create comment') do
+      tags 'POST Comments'
       response(200, 'successful') do
         let(:user_id) { '123' }
         let(:post_id) { '123' }

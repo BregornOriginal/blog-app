@@ -8,7 +8,7 @@ paths:
     get:
       summary: Retrieves comments of a post of the user
       tags:
-      - Comments
+      - GET Comments
       parameters:
       - name: user_id
         in: path
@@ -27,6 +27,8 @@ paths:
           description: Comment found
     post:
       summary: create comment
+      tags:
+      - POST Comments
       responses:
         '200':
           description: successful
@@ -34,7 +36,7 @@ paths:
     get:
       summary: Retrieves posts of the user
       tags:
-      - Posts
+      - GET Posts
       parameters:
       - name: user_id
         in: path

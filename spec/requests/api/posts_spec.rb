@@ -1,11 +1,9 @@
 require 'swagger_helper'
 
 RSpec.describe 'Blogs API' do
-
   path '/api/v1/users/{id}/posts' do
-
     get 'Retrieves posts of the user' do
-      tags 'Posts'
+      tags 'GET Posts'
       produces 'application/json'
       parameter name: 'user_id', in: :path, type: :integer, description: 'user_id'
 
