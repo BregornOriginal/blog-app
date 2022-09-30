@@ -18,7 +18,9 @@
           
 </section>
 <% if @post.comments.empty? %>
-  <h5>No comments</h5>
+  <div class= 'notifications'>
+    <h3>No comments</h5>
+  </div>
 <%else %>
   <div class='user-comments'>
     <% @comments.includes([:author]).each do |comment| %>
@@ -30,18 +32,20 @@
 <%end%>
   </div>
 
-<h1>New Comment</h1>
-<%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |f| %>
+<section class='form comment'>
+    <h1>New Comment</h1>
+  <%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |f| %>
 
-  <div>
+  <div class= 'field'>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </div>
 
-  <%= f.submit "Create Comment" %>
+  <%= f.submit "Create", class: 'create_button' %>
 
-<% end %>
+  <% end %>
 
-<%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
-    <% form.submit 'Like' %>
-<% end %>
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <% form.submit 'Like', class: 'create_button' %>
+  <% end %>
+</section>

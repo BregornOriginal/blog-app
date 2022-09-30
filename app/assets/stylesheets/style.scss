@@ -4,6 +4,12 @@ body {
   box-sizing: border-box;
 }
 
+textarea {
+  resize: none;
+  width: 300px;
+  height: 50px;
+}
+
 .user_name {
   color: rgb(59, 56, 23);
 
@@ -52,6 +58,7 @@ h4 {
   font-weight: bold;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  text-align: center;
 
   &:hover {
     background-color: rgb(221, 163, 38);
@@ -179,11 +186,14 @@ h4 {
   margin: 20px 20px 10px 20px;
 }
 
-.log_in_form {
+.form {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 240px 0 0 0;
+  margin: 100px 0 0 0;
+  &.comment {
+    margin-top: 20px;
+  }
 }
 
 .field {
@@ -198,7 +208,7 @@ h4 {
 }
 
 .actions {
-  margin: 80px 0 0 0;
+  margin: 25px 0 0 0;
 }
 
 .sign_up_form {
