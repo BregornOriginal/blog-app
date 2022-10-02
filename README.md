@@ -1,14 +1,16 @@
 # Blog app
 
-In this blog app, an user can create an account, recover the password, this also have an email confirmation. 
-Once the user is in the app, he can create a post, on it he also can leave a comment or a like.
-If there is other post besides of the user logged, the user logged can have permisions to create a post begin him the author,
-he can leave comments in whole posts and also he can read all the post or comments in the Blog App.
+In this blog app, a user can create an account, and recover the password, this also has an email confirmation. 
+Once the user is logged in to the app, he can create a post, and on it, he also can leave a comment or a like.
+If there is another post besides the user logged, the user logged can have permissions to create a post begin him the author,
+he can leave comments on whole posts and also he can read all the posts or comments in the Blog App.
 
-This app was created with Rails, including Devise for autenthication, CanCanCan for authorizations and JWT for the API authentication.
+This app was created with Rails, including Devise for authentication, CanCanCan for authorizations, and JWT for API authentication.
 
-There is a documentation with the differents Endpoints of the API, where the Developer can check the routes and parameters that's he need
+There is documentation with the differents Endpoints of the API, where the Developer can check the routes and parameters that he need
 to:
+
+/api-docs/index.html
 
 - GET a post
 - GET a comment
