@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <% if user_signed_in? %>
+      <nav class='nav_options'>
+        <div class='home_button'>
+          <a href="/" class='create_button'>Home</a>
+        </div>
+        <%= button_to "Log out", destroy_user_session_path, { method: :delete, data: { turbo: false}, class: 'create_button Log out'} %>
+      </nav>
+    <% end %>
+
+      <%= yield %>
+      <section class= 'notifications'>
+        <p class="notice"><%= notice %></p>
+        <% flash.each do |type, msg| %>
+        <div class="alert <%= type %>">
+          <%= msg %>
+        </div>
+      <% end %>
+      </section>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<div class='back_button_container'>
+  <%=link_to 'Go back', users_url, class: 'create_button back_button' %>
+</div>
+
+<%= render 'users/user'%>
+
+<% if @user.posts.empty? %>
+<div class='notifications'>
+  <h4>No posts created</h4>
+</div>
+<% else %>
+<section class='posts_container'>
+<h4>Recents posts</h4>
+<% @user.three_recent_post.each do |post| %>
+  <article class='post_card'>
+    <div>
+      <%= link_to post.title, user_post_url(@user.id, post.id)%>
+      <p><%= post.text%></p>
+    </div>
+  <div class='counters'>
+    <p>Comments: <%=post.comments_counter%><br></p>
+    <p>Likes: <%=post.likes_counter%><br></p>
+  </div>
+  </article>
+  <% end %>
+<% end %>
+</section>
+
+<div class='create_button_container'>
+  <%= link_to 'See all posts', user_posts_url(@user.id), class: 'create_button'%>
+</div>

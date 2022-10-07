@@ -1,0 +1,51 @@
+<div class='back_button_container'>
+  <%=link_to 'Go back', user_posts_url(@user.id), class: 'create_button back_button' %>
+</div>
+
+<section class='post-container'>
+  <div class='post-title'>
+    <h3>Post # <%=@post.id%> by <%=@post.author.name%></h3>
+    <div class='post-counters'>
+      <p>Likes: <%=@post.likes_counter%></p>
+      <p>Comments: <%=@post.comments_counter%></p>
+    </div>
+  </div>
+  <p><%=@post.title%></p>
+  <p><%=@post.text%></p>
+        <% if can? :delete_post, @post %>
+        <%= button_to "Delete post", user_post_url(@user.id, @post.id), method: :delete %>
+      <% end %>
+          
+</section>
+<% if @post.comments.empty? %>
+  <div class= 'notifications'>
+    <h3>No comments</h5>
+  </div>
+<%else %>
+  <div class='user-comments'>
+    <% @comments.includes([:author]).each do |comment| %>
+      <p><%= comment.author.name%>: <%= comment.text%></p>
+      <% if can? :delete_comment, comment %>
+          <%= button_to "Delete comment", user_post_comment_url(comment.author, @post, comment), method: :delete %>
+        <% end %>
+    <%end%>
+<%end%>
+  </div>
+
+<section class='form comment'>
+    <h1>New Comment</h1>
+  <%= form_with url: user_post_comments_url(@user, @post), method: :post, local: true, scope: :comment do |f| %>
+
+  <div class= 'field'>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </div>
+
+  <%= f.submit "Create", class: 'create_button' %>
+
+  <% end %>
+
+  <%= form_with url: user_post_likes_url(@user, @post), method: 'post' do |form| %>
+    <% form.submit 'Like', class: 'create_button' %>
+  <% end %>
+</section>
